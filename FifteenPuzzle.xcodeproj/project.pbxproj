@@ -12,6 +12,8 @@
 		32BFE0AC207E74DE007DBF88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BFE0AA207E74DE007DBF88 /* Main.storyboard */; };
 		32BFE0AE207E74DE007DBF88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BFE0AD207E74DE007DBF88 /* Assets.xcassets */; };
 		32BFE0B1207E74DE007DBF88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BFE0AF207E74DE007DBF88 /* LaunchScreen.storyboard */; };
+		32BFE0B9207E7C28007DBF88 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE0B8207E7C28007DBF88 /* BoardView.swift */; };
+		32BFE0BB207E87ED007DBF88 /* FifteenBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BFE0BA207E87ED007DBF88 /* FifteenBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		32BFE0AD207E74DE007DBF88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32BFE0B0207E74DE007DBF88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32BFE0B2207E74DE007DBF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32BFE0B8207E7C28007DBF88 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		32BFE0BA207E87ED007DBF88 /* FifteenBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifteenBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,11 @@
 				32BFE0A6207E74DE007DBF88 /* AppDelegate.swift */,
 				32BFE0A8207E74DE007DBF88 /* ViewController.swift */,
 				32BFE0AA207E74DE007DBF88 /* Main.storyboard */,
+				32BFE0B8207E7C28007DBF88 /* BoardView.swift */,
 				32BFE0AD207E74DE007DBF88 /* Assets.xcassets */,
 				32BFE0AF207E74DE007DBF88 /* LaunchScreen.storyboard */,
 				32BFE0B2207E74DE007DBF88 /* Info.plist */,
+				32BFE0BA207E87ED007DBF88 /* FifteenBoard.swift */,
 			);
 			path = FifteenPuzzle;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32BFE0B9207E7C28007DBF88 /* BoardView.swift in Sources */,
 				32BFE0A9207E74DE007DBF88 /* ViewController.swift in Sources */,
+				32BFE0BB207E87ED007DBF88 /* FifteenBoard.swift in Sources */,
 				32BFE0A7207E74DE007DBF88 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,179 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FifteenPuzzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="MainView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-8q-sSJ" userLabel="UIView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="La3-dl-B88" userLabel="BoardView" customClass="BoardView" customModule="FifteenPuzzle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eJ-Jq-G3E" userLabel="1">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1y-FY-3cL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-X7-CjP" userLabel="2">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eai-2Z-Qro"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-ub-oqp" userLabel="3">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kE5-G1-yGo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgl-ZZ-Tmx" userLabel="4">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nXT-on-aw0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FO-Ao-3jU" userLabel="5">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q35-3t-iyh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjO-SV-H1a" userLabel="6">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="6"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2aD-CY-NJ9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CS-Pt-mkz" userLabel="7">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="7"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pYs-XV-Vbv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWz-rU-Kg1" userLabel="8">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="8"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xiA-fK-GbE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="if2-7I-Shd" userLabel="9">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="9"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="96G-i4-Lmf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-bT-IjY" userLabel="10">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="10"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="udN-g9-5BK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-Qb-Lqr" userLabel="11">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="11"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g7T-qX-M9m"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sII-4m-MAe" userLabel="12">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="12"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LE6-EK-4TV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYt-PV-5l7" userLabel="13">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="13"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBh-An-Vah"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Aw-9b-hZT" userLabel="14">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="14"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SOa-O3-D9K"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygf-IU-BgA" userLabel="15">
+                                                <rect key="frame" x="164" y="286" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="15"/>
+                                                <connections>
+                                                    <action selector="tileSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gGi-mR-TkE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLp-mj-e8h">
+                                        <rect key="frame" x="0.0" y="603" width="375" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="tlQ-5y-bJk"/>
+                                        </constraints>
+                                        <items>
+                                            <barButtonItem title="Item" id="JOV-pB-dqF">
+                                                <connections>
+                                                    <action selector="shuffleTiles:" destination="BYZ-38-t0r" id="YDD-6q-C95"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="La3-dl-B88" firstAttribute="bottom" secondItem="pLp-mj-e8h" secondAttribute="top" id="87W-NN-5yh"/>
+                                    <constraint firstItem="pLp-mj-e8h" firstAttribute="bottom" secondItem="7nh-8q-sSJ" secondAttribute="bottom" id="CCP-8F-qGm"/>
+                                    <constraint firstItem="La3-dl-B88" firstAttribute="trailing" secondItem="7nh-8q-sSJ" secondAttribute="trailing" id="PUh-Ta-pQc"/>
+                                    <constraint firstItem="pLp-mj-e8h" firstAttribute="trailing" secondItem="7nh-8q-sSJ" secondAttribute="trailing" id="cPa-Mc-CWM"/>
+                                    <constraint firstItem="La3-dl-B88" firstAttribute="leading" secondItem="7nh-8q-sSJ" secondAttribute="leading" id="eTn-MB-u7M"/>
+                                    <constraint firstItem="La3-dl-B88" firstAttribute="top" secondItem="7nh-8q-sSJ" secondAttribute="top" id="gUy-nJ-ka3"/>
+                                    <constraint firstItem="pLp-mj-e8h" firstAttribute="leading" secondItem="7nh-8q-sSJ" secondAttribute="leading" id="r5D-DE-hkK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7nh-8q-sSJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FFX-O8-NKs"/>
+                            <constraint firstItem="7nh-8q-sSJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6M-rm-liK"/>
+                            <constraint firstItem="7nh-8q-sSJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zo1-mc-VQw"/>
+                            <constraint firstItem="7nh-8q-sSJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n75-Zn-9sr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="boardView" destination="La3-dl-B88" id="j1D-8h-thD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
