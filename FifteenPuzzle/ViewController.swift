@@ -31,22 +31,24 @@ class ViewController: UIViewController {
         let buttonBounds = sender.bounds
         var buttonCenter = sender.center
         var slide = true
-        if board!.canSlideTileUp(atRow: pos!.row, Column: pos!.column) {
+        if board!.canSlideTileUp(atRow: pos!.row, atColumn: pos!.column) {
             buttonCenter.y -= buttonBounds.size.height
-        } else if board!.canSlideTileDown(atRow: pos!.row, Column: pos!.column) {
+        } else if board!.canSlideTileDown(atRow: pos!.row, atColumn: pos!.column) {
             buttonCenter.y += buttonBounds.size.height
-        } else if board!.canSlideTileLeft(atRow: pos!.row, Column: pos!.column) {
+        } else if board!.canSlideTileLeft(atRow: pos!.row, atColumn: pos!.column) {
             buttonCenter.x -= buttonBounds.size.width
-        } else if board!.canSlideTileRight(atRow: pos!.row, Column: pos!.column) {
+        } else if board!.canSlideTileRight(atRow: pos!.row, atColumn: pos!.column) {
             buttonCenter.x += buttonBounds.size.width
         } else {
             slide = false
         }
         if slide {
-            board!.slideTile(atRow: pos!.row, Column: pos!.column)
-            sender.center = buttonCenter // or animate the change
-            if (board!.isSolved()) {
-                // celebrate victory
+            if (board!.slideTile(atRow: pos!.row, atColumn: pos!.column)) {
+                UIView.animate(withDuration: 0.4, animations:
+                    { sender.center = buttonCenter })
+                if (board!.isSolved()) {
+                    // do the win thing
+                }
             }
         }
     }

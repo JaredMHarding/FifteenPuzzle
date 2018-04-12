@@ -18,7 +18,34 @@ class FifteenBoard {
     
     // MARK: Methods
     func scramble(numTimes n: Int) {
-        
+        var i = 0
+        while (i < n) {
+            if let emptyPosition = getRowAndColumn(forTile: 0) {
+                let randomNum = arc4random_uniform(4),
+                r = emptyPosition.row,
+                c = emptyPosition.column
+                switch randomNum {
+                case 0:
+                    if slideTile(atRow: r-1, atColumn: c) {
+                        i += 1
+                    }
+                case 1:
+                    if slideTile(atRow: r+1, atColumn: c) {
+                        i += 1
+                    }
+                case 2:
+                    if slideTile(atRow: r, atColumn: c-1) {
+                        i += 1
+                    }
+                case 3:
+                    if slideTile(atRow: r, atColumn: c+1) {
+                        i += 1
+                    }
+                default:
+                    continue
+                }
+            }
+        }
     }
     
     func getTile(atRow r: Int, atColumn c: Int) -> Int {
@@ -54,19 +81,19 @@ class FifteenBoard {
     }
     
     func canSlideTileUp(atRow r : Int, atColumn c : Int) -> Bool {
-        return (r >= 1) && (r <= 3) && (state[r-1][c] == 0)
+        return (r != 0) && (getTile(atRow: r-1, atColumn: c) == 0)
     }
     
     func canSlideTileDown(atRow r : Int, atColumn c : Int) -> Bool {
-        return (r >= 0) && (r <= 2) && (state[r+1][c] == 0)
+        return (r != 3) && (getTile(atRow: r+1, atColumn: c) == 0)
     }
     
     func canSlideTileLeft(atRow r : Int, atColumn c : Int) -> Bool {
-        return (c >= 1) && (c <= 3) && (state[r][c-1] == 0)
+        return (c != 0) && (getTile(atRow: r, atColumn: c-1) == 0)
     }
     
     func canSlideTileRight(atRow r : Int, atColumn c : Int) -> Bool {
-        return (c >= 0) && (c <= 2) && (state[r][c+1] == 0)
+        return (c != 3) && (getTile(atRow: r, atColumn: c+1) == 0)
     }
     /*
     func canSlideTile(atRow r : Int, atColumn c : Int) -> Bool {
@@ -78,7 +105,25 @@ class FifteenBoard {
         )
     }
     */
-    func slideTile(atRow r : Int, atColumn c: Int) {
-        
+    func slideTile(atRow r : Int, atColumn c: Int) -> Bool {
+        if (r < 0) || (r > 3) || (c < 0) || (c > 3) {
+            // invalid index
+            return false
+        }
+        let tileToMove = getTile(atRow: r, atColumn: c)
+        state[r][c] = 0
+        if canSlideTileRight(atRow: r, atColumn: c) {
+            state[r][c+1] = tileToMove
+        } else if canSlideTileDown(atRow: r, atColumn: c) {
+            state[r+1][c] = tileToMove
+        } else if canSlideTileUp(atRow: r, atColumn: c) {
+            state[r-1][c] = tileToMove
+        } else if canSlideTileLeft(atRow: r, atColumn: c) {
+            state[r][c-1] = tileToMove
+        } else { // if the tile can't move, set the state back to normal
+            state[r][c] = tileToMove
+            return false
+        }
+        return true
     }
 }

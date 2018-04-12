@@ -28,7 +28,7 @@ class BoardView: UIView {
             for c in 0 ..< 4 {
                 let tile = board!.getTile(atRow: r, atColumn: c)
                 if tile > 0 {
-                    let button = self.viewWithTag(tile)
+                    let button = self.viewWithTag(tile) as? UIButton
                     button!.bounds = tileBounds
                     button!.center = CGPoint(x: boardSquare.origin.x + (CGFloat(c) + 0.5)*tileSize,
                                              y: boardSquare.origin.y + (CGFloat(r) + 0.5)*tileSize)
