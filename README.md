@@ -8,6 +8,7 @@
 Fifteen Puzzle is a game in which the player must slide tiles into the correct positions to solve it.
 The tiles each have a number, and should be arranged like this to be solved...
 
+    |    |    |    |    |
     |:--:|:--:|:--:|:--:|
     | 1  | 2  | 3  | 4  |
     | 5  | 6  | 7  | 8  |
