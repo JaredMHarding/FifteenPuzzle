@@ -35,6 +35,9 @@ class BoardView: UIView {
                 }
             }
         }
+        let movesLabel = self.viewWithTag(-1) as? UILabel
+        let numMoves = String(board!.numMoves)
+        movesLabel?.text = "Moves: \(numMoves)"
     }
     
     func boardRect() -> CGRect { // get square for holding 4x4 tiles buttons

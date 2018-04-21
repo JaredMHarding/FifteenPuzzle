@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var boardView: BoardView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,21 +45,21 @@ class ViewController: UIViewController {
         if slide {
             if (board!.slideTile(atRow: pos!.row, atColumn: pos!.column)) {
                 UIView.animate(withDuration: 0.4, animations:
-                    { sender.center = buttonCenter })
+                    { sender.center = buttonCenter }
+                )
                 if (board!.isSolved()) {
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    let board = appDelegate.board!
-                    let numMoves = String(board.numMoves)
+                    let numMoves = String(board!.numMoves)
                     let alert = UIAlertController(title: "You won!", message: "You completed the puzzle in \(numMoves) moves.", preferredStyle: .actionSheet)
                     let alertAction = UIAlertAction(title: "Play Again?", style: .default, handler: {
                         action in
-                        board.scramble(numTimes: appDelegate.numShuffles)
+                        board!.scramble(numTimes: appDelegate.numShuffles)
                         self.boardView.setNeedsLayout()
                     })
                     alert.addAction(alertAction)
                     self.present(alert, animated: true, completion: nil)
                 }
             }
+            self.boardView.setNeedsLayout()
         }
     }
     
