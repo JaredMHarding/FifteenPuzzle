@@ -15,6 +15,7 @@ class FifteenBoard {
         [9,10,11,12],
         [13,14,15,0]
     ]
+    var numMoves = 0
     
     // MARK: Methods
     func scramble(numTimes n: Int) {
@@ -46,6 +47,7 @@ class FifteenBoard {
                 }
             }
         }
+        numMoves = 0
     }
     
     func getTile(atRow r: Int, atColumn c: Int) -> Int {
@@ -120,10 +122,11 @@ class FifteenBoard {
             state[r-1][c] = tileToMove
         } else if canSlideTileLeft(atRow: r, atColumn: c) {
             state[r][c-1] = tileToMove
-        } else { // if the tile can't move, set the state back to normal
+        } else { // if the tile can't move, set the state back to normal and return false
             state[r][c] = tileToMove
             return false
         }
+        numMoves += 1
         return true
     }
 }

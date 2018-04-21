@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var boardView: BoardView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -47,7 +48,17 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: 0.4, animations:
                     { sender.center = buttonCenter })
                 if (board!.isSolved()) {
-                    // do the win thing
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    let board = appDelegate.board!
+                    let numMoves = String(board.numMoves)
+                    let alert = UIAlertController(title: "You won!", message: "You completed the puzzle in \(numMoves) moves.", preferredStyle: .actionSheet)
+                    let alertAction = UIAlertAction(title: "Play Again?", style: .default, handler: {
+                        action in
+                        board.scramble(numTimes: appDelegate.numShuffles)
+                        self.boardView.setNeedsLayout()
+                    })
+                    alert.addAction(alertAction)
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }
